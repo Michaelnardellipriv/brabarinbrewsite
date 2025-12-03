@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
 export default function Contatti() {
@@ -23,10 +22,12 @@ export default function Contatti() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-amber-900/40 border border-amber-400/40 rounded-lg p-8 backdrop-blur-sm text-center">
+            <div className="bg-amber-900/40 border border-amber-400/40 rounded-lg p-8 backdrop-blur-sm text-center">
               <h3 className="text-2xl font-bold text-amber-400 mb-4">Email</h3>
-              <p className="text-gray-300 text-lg">barbarianbrew@gmail.com</p>
+              <p className="text-gray-300 text-lg md:text-xl">
+                barbarian.brew.museum@gmail.com
+              </p>
             </div>
-
             <div className="bg-amber-900/40 border border-amber-400/40 rounded-lg p-8 backdrop-blur-sm text-center">
               <h3 className="text-2xl font-bold text-amber-400 mb-4">Telefono</h3>
               <p className="text-gray-300 text-lg">+39 345 678 9012</p>
@@ -38,7 +39,7 @@ export default function Contatti() {
               <p className="text-gray-300">Sab: 10:00-19:00</p>
               <p className="text-gray-300">Dom: 14:00-19:00</p>
             </div>
-          </div>
+          </div> </div>
 
           {/* Location */}
           <div className="bg-amber-900/40 border border-amber-400/40 rounded-lg p-8 backdrop-blur-sm mb-12">

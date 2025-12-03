@@ -1,0 +1,11 @@
+name = "barbarian-brew-museum"
+type = "javascript"
+account_id = "YOUR_ACCOUNT_ID"
+workers_dev = true
+main = "src/index.js"
+site = { bucket = ".next/static" }
+
+[env.production]
+routes = [
+  { pattern = "barbarian-brew.pages.dev", zone_name = "YOUR_DOMAIN.com" }
+]

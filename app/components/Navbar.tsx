@@ -4,23 +4,53 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <nav className="fixed top-0 w-full bg-amber-950/95 backdrop-blur-md px-8 py-4 z-1000 border-b-2 border-amber-400">
+        <nav className="navbar-container fixed top-0 w-full backdrop-blur-md px-8 py-4 z-1000">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
-                <div className="text-3xl font-black text-amber-400 tracking-wider whitespace-nowrap">
-                    <Link href="/" className="text-3xl font-black text-amber-400 hover:text-amber-300 transition">
+                <div className="text-3xl font-black tracking-wider whitespace-nowrap flex items-center">
+                    <Link href="/" className="navbar-logo text-3xl font-black hover:opacity-80 transition">
                         BARBARIAN BREW
                     </Link>
                 </div>
-                <ul className="hidden md:flex gap-4 list-none flex-1 justify-center ml-12">
-                    <li><Link href="/" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Home</Link></li>
-                    <li><Link href="/museo" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Il Museo</Link></li>
-                    <li><Link href="/shop" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Prodotti</Link></li>
-                    <li><Link href="/galleria" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Galleria</Link></li>
-                    <li><Link href="/eventi" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Eventi</Link></li>
-                    <li><Link href="/distillerie" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Distillerie</Link></li>
-                    <li><Link href="/contatti" className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-amber-50 text-sm font-medium rounded transition">Contatti</Link></li>
-                </ul>
-            </div>
-        </nav>
+               <ul>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/museo" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Il Museo</Link>
+                    </li>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/shop" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Prodotti</Link>
+                    </li>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/galleria" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Galleria</Link>
+                    </li>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/eventi" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Eventi</Link>
+                    </li>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/distillerie" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Distillerie</Link>
+                    </li>
+                    <li aria-hidden="true" className="mx-2">
+                        <span className="inline-block h-6 w-px navbar-separator opacity-40"></span>
+                    </li>
+                    <li className="flex items-center">
+                        <Link href="/contatti" className="navbar-link px-4 py-2 text-sm font-medium rounded transition hover:opacity-80">Contatti</Link>
+                    </li>
+                </ul> 
+                </div>
+            
+        </nav>  
     );
 }
