@@ -1,5 +1,4 @@
-name = "barbarian-brew-museum"
-compatibility_date = "2025-12-03"
-
-[build]
-command = "npm run build"
+# wrangler.toml
+name = "barbarian-bew-museum"
+compatibility_date = "2025-12-12"
+pages_build_output_dir = ".next/build"
