@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
 export default function Shop() {
@@ -36,65 +35,49 @@ export default function Shop() {
   ];
 
   return (
-    <div className="bg-amber-950 text-white">
+    <div className="shop-container">
       <Navbar />
 
-      {/* Header */}
-      <section className="pt-32 pb-12 bg-gradient-to-b from-amber-900 via-amber-950 to-amber-950">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-black mb-4 text-amber-400">
-            I Nostri Prodotti
-          </h1>
-          <p className="text-xl text-gray-300">Scopri la collezione completa delle nostre birre</p>
-        </div>
-      </section>
+      <main className="shop-main">
+        <div className="shop-content">
+          {/* Header */}
+          <div className="shop-header">
+            <h1>I Nostri Prodotti</h1>
+            <p>Scopri la collezione completa delle nostre birre</p>
+          </div>
 
-      {/* Products Grid */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Products Grid */}
+          <div className="products-grid">
             {products.map((product, idx) => (
-              <div key={idx} className="bg-amber-900/40 border border-amber-400/40 rounded-lg overflow-hidden backdrop-blur-sm hover:border-amber-400 transition transform hover:scale-105">
-                <div className="h-48 bg-gradient-to-br from-amber-800 to-amber-950 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-amber-400">{String.fromCharCode(65 + idx)}</div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-amber-400 mb-2">{product.name}</h3>
-                  <p className="text-sm text-amber-300 mb-3">{product.style}</p>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">{product.description}</p>
-                  <div className="flex justify-between items-center pt-4 border-t border-amber-400/20">
+              <div key={idx} className="product-card">
+                <div className="product-image">{String.fromCharCode(65 + idx)}</div>
+                <div className="product-info">
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-style">{product.style}</p>
+                  <p className="product-description">{product.description}</p>
+                  <div className="product-footer">
                     <div>
-                      <p className="text-amber-300 font-bold">{product.abv}</p>
-                      <p className="text-xl font-bold text-amber-400">{product.price}</p>
+                      <p className="product-abv">{product.abv}</p>
+                      <p className="product-price">{product.price}</p>
                     </div>
-                    <button className="bg-amber-400 text-amber-950 px-4 py-2 rounded font-bold hover:bg-amber-300 transition">
-                      Acquista
-                    </button>
+                    <button className="product-button">Acquista</button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </main>
 
-      {/* Info */}
-      <section className="py-12 bg-amber-900/30 border-t border-b border-amber-400/20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-300 mb-4">
-            Acquista i nostri prodotti direttamente dal museo o ordina online
-          </p>
-          <button className="bg-amber-400 text-amber-950 px-8 py-3 rounded-lg font-bold hover:bg-amber-300 transition">
-            Ordina Online
-          </button>
-        </div>
+      {/* Info Section */}
+      <section className="shop-info-section">
+        <p>Acquista i nostri prodotti direttamente dal museo o ordina online</p>
+        <button className="shop-info-button">Ordina Online</button>
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-950 border-t-2 border-amber-400 py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center text-gray-400">
-          <p>© 2025 Barbarian Brew Museum - Tutti i diritti riservati</p>
-        </div>
+      <footer className="shop-footer">
+        <p>© 2025 Barbarian Brew Museum - Tutti i diritti riservati</p>
       </footer>
     </div>
   );

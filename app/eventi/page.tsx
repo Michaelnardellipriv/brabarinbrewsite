@@ -36,62 +36,46 @@ export default function Eventi() {
   ];
 
   return (
-    <div className="bg-amber-950 text-white">
+    <div className="eventi-container">
       <Navbar />
 
-      {/* Header */}
-      <section className="pt-32 pb-12 bg-gradient-to-b from-amber-900 via-amber-950 to-amber-950">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-black mb-4 text-amber-400">
-            Eventi e Attività
-          </h1>
-          <p className="text-xl text-gray-300">Partecipa ai nostri affascinanti eventi</p>
-        </div>
-      </section>
+      <main className="eventi-main">
+        <div className="eventi-content">
+          {/* Header */}
+          <div className="eventi-header">
+            <h1>Eventi e Attività</h1>
+            <p>Partecipa ai nostri affascinanti eventi</p>
+          </div>
 
-      {/* Events List */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="space-y-6">
+          {/* Events List */}
+          <div className="events-list">
             {events.map((event, idx) => (
-              <div key={idx} className="bg-amber-900/40 border border-amber-400/40 rounded-lg p-8 backdrop-blur-sm hover:border-amber-400 transition">
-                <div className="flex items-start gap-6">
-                  <div className="bg-amber-400 text-amber-950 rounded-lg p-4 min-w-fit">
-                    <p className="font-bold text-sm">{event.date}</p>
-                    <p className="text-lg font-bold">{event.time}</p>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-amber-400 mb-2">{event.title}</h3>
-                    <p className="text-gray-300 mb-3">{event.description}</p>
-                    <p className="text-sm text-amber-300 mb-4">Luogo: {event.location}</p>
-                    <button className="bg-amber-400 text-amber-950 px-6 py-2 rounded font-bold hover:bg-amber-300 transition">
-                      Prenota
-                    </button>
-                  </div>
+              <div key={idx} className="event-card">
+                <div className="event-date-box">
+                  <p className="event-date">{event.date}</p>
+                  <p className="event-time">{event.time}</p>
+                </div>
+                <div className="event-details">
+                  <h3>{event.title}</h3>
+                  <p className="event-description">{event.description}</p>
+                  <p className="event-location">Luogo: {event.location}</p>
+                  <button className="event-button">Prenota</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </main>
 
-      {/* CTA */}
-      <section className="py-12 bg-amber-900/30 border-t border-b border-amber-400/20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-300 mb-4 text-lg">
-            Non vuoi perderti nessun evento?
-          </p>
-          <Link href="/contatti" className="bg-amber-400 text-amber-950 px-8 py-3 rounded-lg font-bold hover:bg-amber-300 transition">
-            Iscriviti alla Newsletter
-          </Link>
-        </div>
+      {/* CTA Section */}
+      <section className="eventi-cta-section">
+        <p>Non vuoi perderti nessun evento?</p>
+        <Link href="/contatti" className="eventi-cta-button">Iscriviti alla Newsletter</Link>
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-950 border-t-2 border-amber-400 py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center text-gray-400">
-          <p>© 2025 Barbarian Brew Museum - Tutti i diritti riservati</p>
-        </div>
+      <footer className="eventi-footer">
+        <p>© 2025 Barbarian Brew Museum - Tutti i diritti riservati</p>
       </footer>
     </div>
   );
