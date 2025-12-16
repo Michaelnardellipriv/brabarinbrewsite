@@ -45,7 +45,7 @@ export default function Home() {
       <section className="announcement-section">
         <div className="announcement-container">
           <div className="announcement-content">
-            <h2>🎉 Novità! Apertura ufficiale</h2>
+            <h2>Novità! Apertura ufficiale</h2>
             <p>
               Dopo mesi di preparazione, il Barbarian Brew Museum è finalmente pronto per accogliervi. 
               Un viaggio affascinante attraverso i secoli della storia della birra, dalle antiche civiltà 

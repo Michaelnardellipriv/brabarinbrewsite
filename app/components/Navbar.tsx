@@ -1,6 +1,9 @@
 'use client';
 
+
 import Link from 'next/link';
+import Image from 'next/image';
+import navbarologo from './navbarlogo2.png';
 
 export default function Navbar() {
     return (
@@ -8,7 +11,13 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="text-3xl font-black tracking-wider whitespace-nowrap flex items-center">
                     <Link href="/" className="navbar-logo text-3xl font-black hover:opacity-80 transition">
-                        BARBARIAN BREW
+                        <Image
+                        src={navbarologo}
+                        alt="Barbarian Brew Museum Logo"
+                        width={120}
+                        height={60}
+                        priority
+                    />
                     </Link>
                 </div>
                <ul>
