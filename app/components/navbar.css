@@ -1,0 +1,130 @@
+
+/* --- 1. STILI DESKTOP (Sopra i 768px) --- */
+@media (min-width: 769px) {
+  
+  /* 1. Gestione del contenitore principale: Logo a sinistra, Menu a destra */
+  .navbar-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Forza la riga orizzontale */
+    align-items: center !important; /* Allinea verticalmente al centro */
+    justify-content: space-between !important; /* Logo a un estremo, menu all'altro (o usa flex-start per averli vicini) */
+    width: 100%;
+    padding: 0 20px; /* Un po' di margine laterale */
+  }
+
+  /* 2. Nasconde l'hamburger su PC */
+  .menu-toggle {
+    display: none !important; 
+  }
+
+  /* 3. Stile della lista dei link (il menu vero e proprio) */
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; /* Link uno accanto all'altro */
+    align-items: center;
+    gap: 40px; /* <--- SPAZIO TRA I TESTI: Aumenta questo valore se vuoi più aria */
+    margin: 0 !important;
+    padding: 0 !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    position: static !important; /* Rimuove posizionamenti assoluti del mobile */
+    border: none !important; /* Rimuove bordi ereditati dal mobile */
+  }
+  
+  /* 4. Il Logo */
+  .navbar-logo {
+    display: flex !important;
+    align-items: center;
+    margin-right: auto; /* Opzionale: se vuoi spingere il menu tutto a destra */
+  }
+
+  .navbar-item.separator {
+    display: flex !important; 
+  }
+}
+/* --- 2. STILI MOBILE (Sotto i 768px) --- */
+@media (max-width: 768px) {
+  
+  /* CONTENITORE: Logo a sinistra - Hamburger a destra */
+  .navbar-wrapper {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+    padding: 10px 15px; /* Un po' di padding per non toccare i bordi */
+    height: 70px; /* Altezza fissa per la barra mobile per stabilità */
+  }
+
+  /* LOGO: Impediamo che si schiacci */
+  .navbar-logo {
+    display: flex !important;
+    align-items: center;
+    z-index: 100;
+    flex-shrink: 0; /* FONDAMENTALE: Dice al logo "non restringerti mai" */
+  }
+
+  /* IMMAGINE LOGO: Dimensioni corrette per mobile */
+  .navbar-logo img {
+    height: 40px; /* Altezza ridotta per il cellulare (modifica a piacere) */
+    width: auto;  /* La larghezza si calcola da sola mantenendo le proporzioni */
+    object-fit: contain; /* Assicura che l'immagine non venga "tirata" */
+    max-width: 100%;
+  }
+
+  /* HAMBURGER */
+  .menu-toggle {
+    display: block !important;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    cursor: pointer;
+    z-index: 100;
+    padding: 0; /* Rimuove padding extra del bottone */
+    margin-left: 15px; /* Spazio tra logo e hamburger se lo schermo è minuscolo */
+  }
+
+  /* MENU A TENDINA (Rimane invariato rispetto al tuo codice originale) */
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 90;
+    border-bottom: 2px solid var(--navbar-text);
+  }
+
+  .navbar-nav.active {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding: 20px 0 !important;
+  }
+
+  .navbar-link {
+    display: block !important;
+    padding: 15px 0 !important;
+    width: 100%;
+    text-align: center;
+    color: var(--navbar-text);
+    font-size: 18px;
+  }
+
+  .navbar-item.separator, 
+  .navbar-separator {
+    display: none !important;
+  }
+}

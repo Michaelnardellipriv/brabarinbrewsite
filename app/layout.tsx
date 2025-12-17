@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./styles.css";
+import "./components/navbar.css";
 import "./home.css";
 import "./museo/museo.css";
 import "./shop/shop.css";
