@@ -3,76 +3,89 @@
   --navbar-bg: #472708;    /* Torna al colore scuro di prima */
   --navbar-text: #efae3a;  /* Il tuo colore oro/ambra richiesto */
 }
-
 .navbar-container {
   width: 100%;
   background-color: var(--navbar-bg);
   position: relative; 
   z-index: 1000;
- /* border-bottom: 1px solid rgba(239, 174, 58, 0.2); /* Linea sottile color ambra */
 }
 
 .navbar-wrapper {
-  display: flex;
-  align-items: center;
-  /* Cambiato da space-between a flex-start per spostare tutto a sinistra */
-  justify-content: flex-start; 
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex !important;
+  justify-content: flex-start !important; /* TUTTO A SINISTRA */
+  align-items: center !important;
+  max-width: 100%;
   padding: 10px 20px;
 }
 
 /* --- LOGO --- */
 .navbar-logo {
-  margin-right: 40px; /* Spazio tra il logo e l'inizio del menu */
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  margin-right: 30px !important; /* Spazio tra logo e menu */
+  flex-shrink: 0;
 }
 
-/* --- STILE LINK (Colorati #efae3a) --- */
+/* --- MENU DESKTOP --- */
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 5px;
+}
+
 .navbar-link {
   color: var(--navbar-text) !important;
   text-decoration: none;
   padding: 8px 16px !important; 
   font-size: 14px !important; 
   font-weight: 500 !important;
-  border-radius: 6px !important;
-  transition: all 0.3s ease-in-out !important;
-  display: inline-block;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   white-space: nowrap;
 }
 
 .navbar-link:hover {
-  opacity: 0.7; 
-  background-color: rgba(239, 174, 58, 0.1); /* Sfondo leggero ambra al passaggio */
+  opacity: 0.8;
+  background-color: rgba(239, 174, 58, 0.1);
 }
 
-/* --- DESKTOP --- */
-@media (min-width: 769px) {
-  .menu-toggle { display: none !important; }
-  
-  .navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center;
-    gap: 10px; /* Spazio tra i link */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .navbar-separator {
-    width: 1px;
-    height: 15px;
-    background-color: rgba(239, 174, 58, 0.3); /* Separatore ambra trasparente */
-    margin: 0 5px;
-  }
+.navbar-separator {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(239, 174, 58, 0.3);
+  margin: 0 5px;
 }
 
-/* --- MOBILE --- */
+/* --- MOBILE (Sotto i 768px) --- */
 @media (max-width: 768px) {
-  .navbar-wrapper {
-    justify-content: space-between; /* In mobile mantiene logo a sx e hamburger a dx */
+ .navbar-wrapper {
+    display: flex !important;
+    /* justify-content: space-between spinge il logo a sinistra e l'hamburger a destra */
+    justify-content: space-between !important; 
+    align-items: center !important;
+    width: 100% !important;
+    padding: 10px 10px 10px 15px !important; /* Riduciamo il padding a destra per portarlo più al bordo */
+  }
+
+  .navbar-logo {
+    margin-right: 0 !important; /* Rimuove il margine che avevamo messo per il desktop */
+  }
+
+  /* HAMBURGER ANCORA PIÙ A DESTRA */
+  .menu-toggle {
+    display: block !important;
+    font-size: 45px !important; /* Leggermente più grande come richiesto */
+    color: var(--navbar-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* Rimuoviamo margini interni che potrebbero distanziarlo dal bordo destro */
+    padding-right: 5px !important; 
+    margin-left: auto !important; /* Forza la spinta verso destra */
+    line-height: 1;
   }
 
   .navbar-nav {
@@ -87,19 +100,27 @@
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
   }
 
   .navbar-nav.active {
-    max-height: 600px;
+    max-height: 800px;
     opacity: 1;
     visibility: visible;
-    padding: 20px 0 !important;
+    padding: 30px 0 !important;
   }
 
   .navbar-link {
+    font-size: 20px !important; /* Testo più grande nel menu a tendina */
+    padding: 20px 0 !important;
     width: 100%;
     text-align: center;
-    padding: 15px 0 !important;
   }
+
+  .separator { display: none !important; } /* Nascondi i trattini su mobile */
+}
+
+/* Nasconde l'hamburger su desktop */
+@media (min-width: 769px) {
+  .menu-toggle { display: none !important; }
 }

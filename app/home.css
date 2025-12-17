@@ -151,11 +151,11 @@
 .cta-secondary {
   border: 2px solid #efae3a;
   color: #efae3a;
-  background-color: transparent;
+  background-color: #472708;
 }
 
 .cta-secondary:hover {
-  background-color: rgba(239, 174, 58, 0.1);
+  background-color: #472710;
 }
 
 /* ANNOUNCEMENT SECTION */
