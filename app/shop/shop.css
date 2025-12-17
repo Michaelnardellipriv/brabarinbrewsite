@@ -92,7 +92,18 @@
   backdrop-filter: blur(4px);
   transition: all 0.3s ease;
 }
-
+.product-image {
+  height: auto; /* Change height to auto */
+  width: auto; /* Ensure it occupies the full width of the parent */
+  max-height: 192px; /* Set a maximum height */
+  background: linear-gradient(to bottom-right, #b45309, #3d2817);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbbf24;
+  font-size: 64px;
+  font-weight: 700;
+}
 .product-card:hover {
   border-color: rgba(251, 191, 36, 0.6);
   transform: scale(1.05);

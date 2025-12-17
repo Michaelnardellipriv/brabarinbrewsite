@@ -1,7 +1,11 @@
 'use client';
 
 import Navbar from '../components/Navbar';
+import g1 from './galleria1.png';
+import g2 from './galleria2.png';
+import g3 from './galleria3.png';
 
+const images = [g1, g2, g3];
 export default function Galleria() {
   return (
     <div className="galleria-container">
@@ -16,13 +20,17 @@ export default function Galleria() {
           </div>
 
           {/* Gallery Grid */}
-          <div className="gallery-grid">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((idx) => (
-              <div key={idx} className="gallery-item">
-                <div className="gallery-image">{idx}</div>
-              </div>
-            ))}
-          </div>
+           <div className="gallery-grid">
+  {images.map((src, i) => (
+    <div key={i} className="gallery-item">
+      <img
+        src={src.src}
+        alt={`Galleria immagine ${i + 1}`}
+        className="gallery-image"
+      />
+    </div>
+  ))}
+</div>
         </div>
       </main>
 

@@ -1,7 +1,10 @@
 'use client';
 
 import Navbar from '../components/Navbar';
-
+import BO from './BarbarianOriginal.png';
+import NF from './Northern_Frost.png';
+import VT from './viking_treasure.png';
+import MD from './monastery_dark.png';
 export default function Shop() {
   const products = [
     {
@@ -10,6 +13,7 @@ export default function Shop() {
       abv: '7.2%',
       style: 'Strong Ale',
       price: '6,99 €',
+      img: BO,
     },
     {
       name: 'Northern Frost',
@@ -17,6 +21,7 @@ export default function Shop() {
       abv: '5.8%',
       style: 'Lager',
       price: '5,99 €',
+      img: NF,
     },
     {
       name: 'Viking Treasure',
@@ -24,6 +29,7 @@ export default function Shop() {
       abv: '8.1%',
       style: 'Spiced Ale',
       price: '7,99 €',
+      img: VT,
     },
     {
       name: 'Monastery Dark',
@@ -31,6 +37,7 @@ export default function Shop() {
       abv: '6.5%',
       style: 'Porter',
       price: '6,49 €',
+      img: MD,
     },
   ];
 
@@ -47,25 +54,31 @@ export default function Shop() {
           </div>
 
           {/* Products Grid */}
-          <div className="products-grid">
+            <div className="products-grid">
             {products.map((product, idx) => (
               <div key={idx} className="product-card">
-                <div className="product-image">{String.fromCharCode(65 + idx)}</div>
-                <div className="product-info">
-                  <h3 className="product-name">{product.name}</h3>
-                  <p className="product-style">{product.style}</p>
-                  <p className="product-description">{product.description}</p>
-                  <div className="product-footer">
-                    <div>
-                      <p className="product-abv">{product.abv}</p>
-                      <p className="product-price">{product.price}</p>
-                    </div>
-                    <button className="product-button">Acquista</button>
-                  </div>
+              <div className="product-image">
+                {product.img ? (
+                <img src={product.img.src} alt={product.name} />
+                ) : (
+                String.fromCharCode(65 + idx)
+                )}
+              </div>
+              <div className="product-info">
+                <h3 className="product-name">{product.name}</h3>
+                <p className="product-style">{product.style}</p>
+                <p className="product-description">{product.description}</p>
+                <div className="product-footer">
+                <div>
+                  <p className="product-abv">{product.abv}</p>
+                  <p className="product-price">{product.price}</p>
+                </div>
+                <button type="button" className="product-button">Acquista</button>
                 </div>
               </div>
+              </div>
             ))}
-          </div>
+            </div>
         </div>
       </main>
 
