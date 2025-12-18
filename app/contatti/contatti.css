@@ -151,11 +151,17 @@
   margin-bottom: 16px;
 }
 
-.contatti-card p {
-  color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.6;
+
+.contatti-card p, 
+.contatti-location-detail p,
+.contatti-location-detail ul li {
+  word-wrap: break-word;       /* Vecchio standard, molto compatibile */
+  overflow-wrap: break-word;    /* Standard moderno */
+  word-break: break-all;       /* Spezza la parola esattamente al bordo (utile per email lunghe) */
+  hyphens: auto;               /* Aggiunge il trattino se necessario */
+  max-width: 100%;             /* Impedisce di superare il contenitore padre */
 }
+
 
 /* FORM CONTAINER */
 .contatti-form-container {
@@ -350,4 +356,33 @@
 
 .contatti-footer p {
   margin: 0;
+}
+/* --- FIX TABLET SPECIFICO (768px - 1024px) --- */
+@media (max-width: 1024px) {
+  .contatti-main {
+    padding-top: 60px;
+  }
+
+  /* Impedisce che le card diventino troppo strette */
+  .contatti-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+
+  /* Titolo più leggibile */
+  .contatti-title h1 {
+    font-size: 38px;
+    text-align: center;
+  }
+  
+  .contatti-title p {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+/* Fix per evitare sovrapposizioni nella Navbar che hai citato prima */
+@media (max-width: 996px) {
+  .contatti-main {
+    padding-top: 120px; /* Lascia spazio alla navbar mobile che è spessa */
+  }
 }

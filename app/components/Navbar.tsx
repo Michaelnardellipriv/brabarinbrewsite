@@ -5,8 +5,11 @@ import Image from 'next/image';
 import navbarologo from './navbarlogo2.png';
 import { useState } from 'react';
 import './navbar.css';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
+
 
 export default function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -78,8 +81,20 @@ export default function Navbar() {
           <li className="navbar-item">
             <Link href="/contatti" className="navbar-link" onClick={closeMenu}>Contatti</Link>
           </li>
+          {/* Social inseriti dentro la lista */}
+          <li className="navbar-social-wrapper">
+            <div className='linksocial'>
+              <a href="https://www.instagram.com/barbarian.brew.museum/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="icon-style" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61584642045592" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="icon-style" />
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
+   
     </nav>
   );
 }

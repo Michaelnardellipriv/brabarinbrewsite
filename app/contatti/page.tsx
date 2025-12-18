@@ -86,7 +86,7 @@ export default function Contatti(): React.JSX.Element {
                 
                 {/* MAPPA */}
                 <div className="contatti-map">
-                  <p>Mappa Google Maps</p>
+                  <p>Caricamento Mappa</p>
                 </div>
                 
                 {/* DETTAGLI INDIRIZZO */}

@@ -60,34 +60,34 @@
 }
 
 /* --- MOBILE (Sotto i 768px) --- */
-@media (max-width: 768px) {
- .navbar-wrapper {
+@media (max-width: 996px) {
+  .navbar-wrapper {
     display: flex !important;
-    /* justify-content: space-between spinge il logo a sinistra e l'hamburger a destra */
     justify-content: space-between !important; 
     align-items: center !important;
     width: 100% !important;
-    padding: 10px 10px 10px 15px !important; /* Riduciamo il padding a destra per portarlo più al bordo */
+    padding: 10px 10px 10px 15px !important;
   }
 
   .navbar-logo {
-    margin-right: 0 !important; /* Rimuove il margine che avevamo messo per il desktop */
+    margin-right: 0 !important;
   }
 
-  /* HAMBURGER ANCORA PIÙ A DESTRA */
+  /* HAMBURGER */
   .menu-toggle {
     display: block !important;
-    font-size: 45px !important; /* Leggermente più grande come richiesto */
+    font-size: 45px !important;
     color: var(--navbar-text);
     background: none;
     border: none;
     cursor: pointer;
-    /* Rimuoviamo margini interni che potrebbero distanziarlo dal bordo destro */
     padding-right: 5px !important; 
-    margin-left: auto !important; /* Forza la spinta verso destra */
+    margin-left: auto !important;
     line-height: 1;
+    z-index: 1001; /* Assicura che sia sempre sopra */
   }
 
+  /* MENU A TENDINA (Contenitore Link + Social) */
   .navbar-nav {
     display: flex !important;
     flex-direction: column !important;
@@ -103,24 +103,94 @@
     transition: all 0.4s ease-in-out;
   }
 
+  /* Quando il menu è aperto */
   .navbar-nav.active {
-    max-height: 800px;
+    max-height: 100vh; /* Permette di scorrere se i link sono tanti */
     opacity: 1;
     visibility: visible;
     padding: 30px 0 !important;
   }
 
   .navbar-link {
-    font-size: 20px !important; /* Testo più grande nel menu a tendina */
+    font-size: 20px !important;
     padding: 20px 0 !important;
     width: 100%;
     text-align: center;
   }
 
-  .separator { display: none !important; } /* Nascondi i trattini su mobile */
+  /* SISTEMAZIONE SOCIAL NEL MENU */
+  .navbar-social-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(239, 174, 58, 0.2); /* Sottile linea di divisione */
+  }
+
+  .linksocial {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 30px !important; /* Più spazio per il tocco delle dita */
+    margin-left: 0 !important; /* Rimuove lo spostamento a destra del desktop */
+  }
+
+  .icon-style {
+    font-size: 35px !important; /* Icone social più grandi per mobile */
+  }
+
+  .separator, .navbar-item.separator { 
+    display: none !important; 
+  } 
 }
 
 /* Nasconde l'hamburger su desktop */
-@media (min-width: 769px) {
+@media (min-width: 996px) {
   .menu-toggle { display: none !important; }
+}
+/* --- ICONE SOCIAL (Desktop) --- */
+.navbar-social-wrapper {
+  margin-left: auto; /* Spinge i social a destra su desktop */
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.linksocial {
+  display: flex;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.icon-style {
+  font-size: 24px;
+  color: var(--navbar-text);
+  transition: all 0.3s ease;
+}
+
+.icon-style:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* --- MOBILE (Sotto i 768px) --- */
+@media (max-width: 996px) {
+  .navbar-social-wrapper {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(239, 174, 58, 0.2); /* Riga separatrice nel menu mobile */
+    margin-top: 10px;
+  }
+
+  .linksocial {
+    justify-content: center;
+    gap: 30px; /* Più spazio per il tocco su mobile */
+  }
+
+  .icon-style {
+    font-size: 32px; /* Più grandi nel menu a tendina */
+  }
 }
