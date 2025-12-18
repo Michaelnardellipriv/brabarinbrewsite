@@ -53,9 +53,8 @@ export default function Museo() {
 Da allora la ricetta è stata tramandata come un piccolo tesoro, e oggi continua a vivere come simbolo di forza e tradizione. Il nuovo museo racconterà proprio questo percorso, semplice ma affascinante.
               </p>
               <p>
-                Gli abitanti, colpiti dal suo sapore "selvaggio", la chiamarono "Barbarian Brew". In poco tempo la birra 
-                divenne famosa tra viaggiatori e mercanti, che la consideravano ideale per scaldarsi e trovare un po' di 
-                coraggio durante i lunghi viaggi attraverso le gelide terre del nord.
+                Da allora la ricetta è stata tramandata come un piccolo tesoro, e oggi continua a vivere come simbolo di forza e tradizione. Il nuovo museo racconterà proprio questo percorso, semplice ma affascinante.
+
               </p>
               <p>
                 Così, per caso, nacque la <span className="story-highlight">Barbarian Brew: una birra semplice, potente e ricordata per il suo spirito 

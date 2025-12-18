@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import g1 from './galleria1.png';
 import g2 from './galleria2.png';
 import g3 from './galleria3.png';
+import g4 from './galleria4.png';
+
 
 const images = [g1, g2, g3];
 export default function Galleria() {
