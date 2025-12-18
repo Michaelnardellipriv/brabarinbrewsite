@@ -7,19 +7,19 @@ export default function Distillerie() {
   const breweries = [
     {
       name: 'Distilleria del Nord',
-      location: 'Piemonte',
+      location: 'Norvegia',
       description: 'Dove tutto è iniziato. La distilleria originale dove Arvid ha creato la prima Barbarian Brew.',
       features: ['Sala Storica', 'Laboratorio Artigianale', 'Degustazione'],
     },
     {
       name: 'Monastero della Birra',
-      location: 'Toscana',
+      location: 'Regno Unito',
       description: 'Tradizione medievale ancora viva. Un luogo dove la storia e la fermentazione si incontrano.',
       features: ['Architettura Medievale', 'Archivi Storici', 'Museo Interattivo'],
     },
     {
       name: 'Fortezza Artigianale',
-      location: 'Lombardia',
+      location: 'Canada',
       description: 'Innovazione e tradizione insieme. La distilleria moderna che rispetta le antiche ricette.',
       features: ['Tecnologie Moderne', 'Laboratorio di Ricerca', 'Bottega Artigianale'],
     },
